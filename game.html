@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打字游戏</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #type{
+            width: 650px;
+            height: 450px;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+
+        }
+        #gameStart{
+            width: 100%;
+            height: 100%;
+            background: plum;
+            /* display: none; */
+
+        }
+        #start{
+            width: 180px;
+            height: 50px;
+            position: absolute;
+            background-color: powderblue;
+            bottom: 90px;
+            left: 5px;
+            border-radius: 20px;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bolder;
+            color: seashell;
+            letter-spacing: 5px;
+            font-size: 20px;
+
+        }
+        #descriable{
+            width: 180px;
+            height: 50px;
+            position: absolute;
+            background-color: powderblue;
+            bottom: 20px;
+            left: 5px;
+            border-radius: 20px;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bolder;
+            color: seashell;
+            letter-spacing: 5px;
+            font-size: 20px;
+        }
+        #des{
+            position: absolute;
+            width:240px ;
+            height: 120px;
+            /* border: 1px solid red; */
+            background: powderblue;
+            left: 240px;
+            top: 150px;
+            display: none;
+        }
+        #cl1{
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+            background: white;
+            font-size: 14px;
+        }
+        #game{
+            display: none;
+            width: 100%;
+            height: 100%;
+            background: paleturquoise;
+        }
+        #oprate{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border: 1px solid #ccc;
+            width: 100px;
+            height: 100px;
+        }
+        #oprate span{
+            height: 40px;
+            width: 40px;
+            display: inline-block;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            /* border: 1px solid brown; */
+            background: plum;
+            color: white;
+            position: absolute;
+            font-weight: bolder;
+        }
+        #oprate span:hover{
+            background: yellowgreen;
+        }
+        #oprate span:nth-child(1){
+            left: 0;
+            top:30px;
+        }
+        #oprate span:nth-child(2){
+            left: 30px;
+            top:0;
+        }
+        #oprate span:nth-child(3){
+            left: 30px;
+            bottom:0;
+        }
+        #oprate span:nth-child(4){
+            right: 0;
+            bottom:30px;
+        }
+        #sel{
+            display: none;
+            width: 140px;
+            height: 60px;
+            /* border: 7px solid plum; */
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            background: plum;
+        }
+        #sel select{
+            width: 80px;
+            height: 30px;
+            text-indent: 20px;
+            font-size: 15px;
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+        #cl{
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+            background: white;
+            
+        }
+        #tit{
+            position:absolute;
+            top: 10px;
+            right: 0;
+            /* border: 1px solid rgb(156, 154, 154); */
+            width: 150px;
+            line-height: 30px;
+            padding: 5px 10px;
+            color: plum;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .active{
+            position:absolute;
+            top: -30px;
+            left: 50px;
+            width: 30px;
+            height: 30px;
+            /* border: 1px solid purple; */
+            /* background: plum; */
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            color: whitesmoke;
+            font-weight: bolder;
+        }
+    </style>
+    <script src="game.js"></script>
+    <script src="keyVal.js"></script>
+</head>
+<body>
+    <div id="type">
+        <!-- 游戏开始界面 -->
+        <div id="gameStart">
+            <div id="start">开始</div>
+            <div id="descriable">说明</div>
+            <div id="des">javascript打字游戏
+                <span id="cl1">关闭</span>
+            </div>
+        </div>
+        <!-- 游戏界面 -->
+        <div id="game">
+            <div id="oprate">
+                <span class="s">开始</span>
+                <span class="t">退出</span>
+                <span class="f">结束</span>
+                <span class="set">设置</span>
+            </div>
+            <div id="sel">
+                <select name="" id="">
+                    <option value="3">慢</option>
+                    <option value="2">中</option>
+                    <option value="1">快</option>
+                </select>
+                <span id="cl">关闭</span>
+            </div>
+            <!-- 提示打字的正确率和速度 -->
+            <div id="tit">
+                <p>得分<span>0</span>分</p>
+                <p>速度：<span>0</span>个/分钟</p>
+                <p>正确率：<span>0%</span></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
